@@ -1,0 +1,112 @@
+:root {
+    --primary-bg: #5f79a0;
+    --day-cell-bg: #e4eef8;
+    --text-light: white;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header-table, .schedule-table, .friday-table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.logo {
+    width: 100%;
+    max-width: 333px;
+    height: auto;
+    aspect-ratio: 333/115;
+}
+
+.deprt-info, .year-info {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.separator {
+    width: 95%;
+    border: 0.1em solid black;
+    margin: 1em auto;
+}
+
+.schedule-header td {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    font-family: "Optima", sans-serif;
+    text-align: center;
+    padding: 8px;
+    height: 50px;
+}
+
+.schedule-header td:first-child {
+    background-color: var(--primary-bg);
+    width: 50px;
+}
+
+.schedule-table, .friday-table {
+    margin-top: 20px;
+    table-layout: fixed;
+}
+
+.schedule-table td, .friday-table td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    height: 50px;
+}
+
+.day-cell {
+    background-color: var(--day-cell-bg);
+    font-weight: bold;
+    position: relative;
+    height: 75px;
+}
+
+.day-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: clamp(10px, 2vw, 12px);
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+}
+
+.course {
+    padding: 10px;
+    text-align: center;
+    font-size: clamp(12px, 2vw, 14px);
+}
+
+.black-cell {
+    background-color: black;
+}
+
+.empty-cell {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+@media (min-width: 768px) {
+    .header-table, .schedule-table, .friday-table, .separator {
+        width: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-header td, .schedule-table td, .friday-table td {
+        padding: 4px;
+        height: 40px;
+    }
+    
+    .day-cell {
+        height: 60px;
+    }
+}

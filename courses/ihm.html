@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Homme Machine</title>
+    <style>
+        :root {
+          --bg-color: #f4f4f4;
+          --container-bg: white;
+          --button-color: green;
+          --button-hover: red;
+          --dark-label-bg: white;
+          --dark-label-text: black;
+          --dark-label-border: black;
+          --dark-mode-active: gold;
+        }
+        
+        body {
+          font-family: Times, sans-serif;
+          text-align: center;
+          background-color: var(--bg-color);
+          margin: 0;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+          padding: 0;
+        }
+        
+        .main-container {
+          width: 100%;
+          min-height: 100vh;
+          padding: 2rem;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: var(--container-bg);
+        }
+        
+        .chapitres {
+          margin-bottom: 3rem;
+        }
+        
+        .back-button {
+          display: inline-block;
+          padding: 0.8rem 1.5rem;
+          background-color: var(--button-color);
+          color: white;
+          text-decoration: none;
+          border-radius: 15px;
+          transition: all 0.3s ease;
+          font-size: 1rem;
+        }
+        
+        .back-button:hover {
+          background-color: var(--button-hover);
+          transform: scale(1.05);
+        }
+        
+        #dark-mode-checkbox {
+          display: none;
+        }
+        
+        .dark-mode-label {
+          position: fixed;
+          bottom: 1.5rem;
+          right: 1.5rem;
+          width: 6.5rem;
+          height: 2.5rem;
+          background: var(--dark-label-bg);
+          border: 2px solid var(--dark-label-border);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.9rem;
+          font-weight: bold;
+          color: var(--dark-label-text);
+          cursor: pointer;
+          border-radius: 20px;
+          transition: all 0.3s ease;
+          z-index: 100;
+        }
+        
+        .dark-mode-label::before {
+          content: "Dark Mode";
+        }
+        
+        #dark-mode-checkbox:checked ~ .main-container {
+          filter: invert(1) hue-rotate(180deg);
+        }
+        
+        #dark-mode-checkbox:checked ~ .dark-mode-label {
+          background: black;
+          color: var(--dark-mode-active);
+          border-color: var(--dark-mode-active);
+        }
+        
+        #dark-mode-checkbox:checked ~ .dark-mode-label::before {
+          content: "Light Mode";
+        }
+        
+        @media (max-width: 768px) {
+          .main-container {
+            padding: 1.5rem;
+          }
+          
+          .chapitres {
+            margin-bottom: 2rem;
+          }
+          
+          .dark-mode-label {
+            width: 5.5rem;
+            height: 2.2rem;
+            font-size: 0.8rem;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .main-container {
+            padding: 1rem;
+          }
+          
+          .back-button {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+          }
+          
+          .dark-mode-label {
+            width: 5rem;
+            height: 2rem;
+            font-size: 0.7rem;
+            bottom: 1rem;
+            right: 1rem;
+          }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="dark-mode-checkbox">
+    <label for="dark-mode-checkbox" class="dark-mode-label"></label>
+    <div class="main-container">
+        <h2>Les Chapitres De Cours De "Modélisation"</h2>
+        <div class="chapitres">
+            <p><strong>Polycopie Complète :</strong>&nbsp;<a href="https://drive.google.com/file/d/1jQH4Tb8WMSignbUxMsYO2KvJXaJqeqM9/view?usp=drive_link" target="_blank">IHM</a></p>
+            <p><strong>Version 2020 :</strong>&nbsp;<a href="https://drive.google.com/file/d/1jQH4Tb8WMSignbUxMsYO2KvJXaJqeqM9/view?usp=drive_link" target="_blank">IHM_2020</a></p>
+            <p><strong>Malheureusement, Le cours du professeur Ayoub Ellahyani est le seul auquel nous avons accès.</strong></p>
+            <p><strong>Email :</strong> ayoub.ellahyani@yahoo.com</p>
+        </div>
+        <a href="../main/schedule.html" class="back-button">Retourner à l'emploi du temps</a>
+    </div>
+</body>
+</html>

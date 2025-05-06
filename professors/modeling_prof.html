@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacter A. El Mouatasim</title>
+    <style>
+      :root {
+        --bg-image: url('../main/bg_img.jpeg');
+        --container-bg: white;
+        --text-color: black;
+        --border-color: #ccc;
+        --primary-btn-hover: rgb(101, 218, 101, 0.65);
+        --danger-btn-hover: rgb(255, 0, 0);
+        --dark-mode-active: gold;
+        --btn-bg: whitesmoke;
+      }
+      
+      body {
+        font-family: Times, sans-serif;
+        text-align: center;
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+      
+      .main-container {
+        width: 100%;
+        max-width: 500px;
+        padding: 1.5rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        background: var(--container-bg);
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .professor-info {
+        margin-bottom: 1.5rem;
+      }
+      
+      label {
+        display: block;
+        margin-top: 0.8rem;
+        font-weight: bold;
+        width: 100%;
+      }
+      
+      input, select, textarea {
+        width: 100%;
+        padding: 0.6rem;
+        margin-top: 0.4rem;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      
+      textarea {
+        resize: none;
+        min-height: 100px;
+      }
+      
+      .submit-btn, .reset-btn, .back-button {
+        margin-top: 1rem;
+        background-color: var(--btn-bg);
+        color: var(--text-color);
+        border: 1px solid var(--text-color);
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 200px;
+      }
+      
+      .submit-btn:hover {
+        color: white;
+        background-color: var(--primary-btn-hover);
+      }
+      
+      .reset-btn:hover {
+        color: white;
+        background-color: var(--danger-btn-hover);
+      }
+      
+      .back-button {
+        text-decoration: none;
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
+      
+      .back-button:hover {
+        color: white;
+        background-color: var(--text-color);
+      }
+      
+      #dark-mode-checkbox {
+        display: none;
+      }
+      
+      .dark-mode-label {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 6.5rem;
+        height: 2.5rem;
+        background: white;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+      
+      .dark-mode-label::before {
+        content: "Dark Mode";
+      }
+      
+      #dark-mode-checkbox:checked ~ .main-container {
+        filter: invert(1) hue-rotate(180deg);
+      }
+      
+      #dark-mode-checkbox:checked ~ .dark-mode-label {
+        background: black;
+        color: var(--dark-mode-active);
+        border-color: var(--dark-mode-active);
+      }
+      
+      #dark-mode-checkbox:checked ~ .submit-btn:hover,
+      #dark-mode-checkbox:checked ~ .reset-btn:hover,
+      #dark-mode-checkbox:checked ~ .back-button:hover {
+        border-color: var(--dark-mode-active);
+      }
+      
+      #dark-mode-checkbox:checked ~ .dark-mode-label::before {
+        content: "Light Mode";
+      }
+      
+      @media (max-width: 768px) {
+        .main-container {
+          padding: 1.2rem;
+          width: 90%;
+        }
+        
+        input, select, textarea {
+          padding: 0.5rem;
+        }
+        
+        .submit-btn, .reset-btn, .back-button {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        body {
+          padding: 0.5rem;
+        }
+        
+        .main-container {
+          padding: 1rem;
+          border-radius: 15px;
+        }
+        
+        .dark-mode-label {
+          width: 5.5rem;
+          height: 2rem;
+          font-size: 0.8rem;
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+  </style>
+</head>
+<body>
+
+    <input type="checkbox" id="dark-mode-checkbox">
+    <label for="dark-mode-checkbox" class="dark-mode-label"></label>
+
+    <div class="main-container">
+        <h2>Contactez Abdelkrim El Mouatasim</h2>
+        <h4>Professeur à la Faculté Polydisciplinaire de Ouarzazate</h4>
+        <form>
+            <label class="label" for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre Nom" required>
+
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre Prénom" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Votre Email" required>
+
+            <label for="type_demande">Type de Demande:</label>
+            <select id="type_demande" name="type_demande">
+                <option value="autre">Autre</option>
+                <option value="question">Question</option>
+                <option value="rendez-vous">Demande de Rendez-vous</option>
+                <option value="reclamation">Réclamation</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Décrivez Votre Message" required></textarea>
+
+            <button type="submit" class="submit-btn">Envoyer</button>
+
+            <button type="reset" class="reset-btn">Réinitialiser</button>
+        </form>
+
+        <a href="../main/schedule.html" class="back-button">Retourner à l'emploi du temps</a>
+        
+        <br>
+
+            <p class="professor-info"><strong>Email de Prof. Abdelkrim El Mouatasim :</strong> a.elmouatasim@gmail.com  </p>
+            
+    </div>
+
+</body>
+</html>

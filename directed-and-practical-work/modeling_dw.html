@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation</title>
+    <style>
+        :root {
+            --light-bg: #f4f4f4;
+            --dark-bg: #222;
+            --button-color: green;
+            --button-hover: red;
+            --text-light: white;
+            --text-dark: black;
+        }
+        
+        body {
+            font-family: Times, sans-serif;
+            text-align: center;
+            background-color: var(--light-bg);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .main-container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+        
+        .dpw {
+            margin-bottom: 20px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--button-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .back-button:hover {
+            background-color: var(--button-hover);
+        }
+        
+        #dark-mode-checkbox {
+            display: none;
+        }
+        
+        .dark-mode-label {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 40px;
+            background: white;
+            border: 2px solid black;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .dark-mode-label::before {
+            content: "Dark Mode";
+        }
+        
+        #dark-mode-checkbox:checked ~ .main-container {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        
+        #dark-mode-checkbox:checked ~ .dark-mode-label {
+            background: black;
+            color: white;
+            border-color: gold;
+        }
+        
+        #dark-mode-checkbox:checked ~ .dark-mode-label::before {
+            content: "Light Mode";
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 10px;
+            }
+            
+            .dpw {
+                margin-bottom: 15px;
+            }
+            
+            .dark-mode-label {
+                width: 90px;
+                height: 35px;
+                font-size: 13px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .back-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .dark-mode-label {
+                width: 80px;
+                height: 30px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="dark-mode-checkbox">
+    <label for="dark-mode-checkbox" class="dark-mode-label"></label>
+    <div class="main-container">
+        <h2>Travaux Dirigés et Pratiques Du "Modélisation"</h2>
+        <div class="dpw">
+            <p><strong>Travaux Dirigés I :</strong>&nbsp;<a href="https://drive.google.com/file/d/1_dK7irsNsONr62L3SMlirtReu0YGpNtx/view?usp=drive_link" target="_blank">TD 1</a></p>
+            <p><strong>Premier Solution De Travaux Dirigés I :</strong>&nbsp;<a href="https://drive.google.com/file/d/1X54bwg-R_M2Wd0qOXd8Q1IF_AXGc7cm7/view?usp=drive_link" target="_blank">TD 1 (solution 1)</a></p></strong></p>
+            <p><strong>Deuxième Solution De Travaux Dirigés I :</strong>&nbsp;<a href="https://drive.google.com/file/d/1p5GX82ETN1l-6T7tz996AUZKSjCDPIaM/view?usp=drive_link" target="_blank">TD 1 (solution 2)</a></p></strong></p>
+            <p><strong>Travaux Dirigés II :</strong>&nbsp;<a href="https://drive.google.com/file/d/1XbmxEwKRZ-zrVokvE5fuAGnLrOvTRHO-/view?usp=drive_link" target="_blank">TD 2</a></p>
+            <p><strong>Solution De Travaux Dirigés II :</strong>&nbsp;<a href="https://drive.google.com/file/d/1FMnuGhMTwhgm2tV20M6eOlnTb2d4f7Iw/view?usp=drive_link" target="_blank">TD 2 (solution)</a></p></strong></p>
+            <p><strong>ravaux Pratiques :</strong>&nbsp;<a href="https://drive.google.com/file/d/1bAKPqpZouMRZirNONtwYREmoDmkKs-IU/view?usp=drive_link" target="_blank">TP</a></p></strong></p>
+        </div>
+        <a href="../main/schedule.html" class="back-button">Retourner à l'emploi du temps</a>
+    </div>
+</body>
+</html>
